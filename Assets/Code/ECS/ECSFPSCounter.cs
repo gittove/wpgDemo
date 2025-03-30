@@ -1,7 +1,8 @@
+using TMPro;
 using Unity.Entities;
 using Unity.Mathematics;
 using UnityEngine;
-using TMPro;
+
 
 public class ECSFPSCounter : MonoBehaviour
 {

@@ -64,6 +64,7 @@ partial struct SpawningSystem : ISystem
         public void Execute()
         {
             var spawnerData = SpawnerDataLookup[entity];
+            Random mathRandom = new Random(100);
 
             float distance = 5f;
             int spawnCount = 0;
@@ -73,6 +74,9 @@ partial struct SpawningSystem : ISystem
                 {
                     var e = Ecb.Instantiate(spawnerData.Prefab);
                     var hoverable = HoverableLookup[spawnerData.Prefab];
+                    hoverable.Radius = new float3(1f,1f,1f);
+                    hoverable.Rate = new float3(mathRandom.NextFloat(0f,5f), mathRandom.NextFloat(0f,3f), mathRandom.NextFloat(0f,2f));
+                    hoverable.Offset =  new float3(mathRandom.NextFloat(0f,1f), mathRandom.NextFloat(0f,1f), mathRandom.NextFloat(0f,1f));
                     hoverable.Origin = new float3(i, k, 0f);
                     Ecb.SetComponent(e, hoverable);
                     spawnCount++;
