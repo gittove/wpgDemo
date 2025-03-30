@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class SquigglyMovementComponent : MonoBehaviour
 {
-    [SerializeField] private float _speed;
-
     [SerializeField] private Vector3 _radius;
     [SerializeField] private Vector3 _offset;
     [SerializeField] private Vector3 _rate;
