@@ -5,7 +5,6 @@ using UnityEngine;
 public class SpawnerAuthoring : MonoBehaviour
 {
     public float3 SpawnRange;
-    public GameObject Prefab;
 
     [BakingVersion("tove", 1)]
     private class SpawnerBaker : Baker<SpawnerAuthoring>
@@ -16,7 +15,6 @@ public class SpawnerAuthoring : MonoBehaviour
             AddComponent(entity, new SpawnerData 
             {
                 SpawnRange = authoring.SpawnRange,
-                Prefab = GetEntity(authoring.Prefab, TransformUsageFlags.Dynamic),
                 SpawnedCount = 0
             });
         }

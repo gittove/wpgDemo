@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        int distance = 2;
+        int distance = 5;
         spawned = 0;
 
         for(float i = -(SpawnRange.x * 0.5f); i < SpawnRange.x * 0.5f; i += distance)

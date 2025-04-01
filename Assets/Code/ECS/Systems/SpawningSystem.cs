@@ -25,15 +25,15 @@ partial struct SpawningSystem : ISystem
             return;
         }
 
-        //if (!SystemAPI.TryGetSingleton<PrefabHolder>(out PrefabHolder prefabHolder))
-        //{
-        //    return;
-        //}
+        if (!SystemAPI.TryGetSingleton<PrefabHolder>(out PrefabHolder prefabHolder))
+        {
+           return;
+        }
 
         var spawnJob = new SpawnJob()
         {
             entity = e,
-            //PrefabHolder = prefabHolder,
+            PrefabHolder = prefabHolder,
             SpawnerDataLookup = SystemAPI.GetComponentLookup<SpawnerData>(),
             HoverableLookup = SystemAPI.GetComponentLookup<Hoverable>(),
             Ecb = ecb
@@ -53,7 +53,7 @@ partial struct SpawningSystem : ISystem
     {
         public Entity entity;
 
-        //public PrefabHolder PrefabHolder;
+        public PrefabHolder PrefabHolder;
 
         public ComponentLookup<SpawnerData> SpawnerDataLookup;
 
@@ -72,8 +72,8 @@ partial struct SpawningSystem : ISystem
             {
                 for(float k = -(spawnerData.SpawnRange.y * 0.5f); k < spawnerData.SpawnRange.y * 0.5f; k += distance)
                 {
-                    var e = Ecb.Instantiate(spawnerData.Prefab);
-                    var hoverable = HoverableLookup[spawnerData.Prefab];
+                    var e = Ecb.Instantiate(PrefabHolder.Prefab);
+                    var hoverable = HoverableLookup[PrefabHolder.Prefab];
                     hoverable.Radius = new float3(1f,1f,1f);
                     hoverable.Rate = new float3(mathRandom.NextFloat(0f,5f), mathRandom.NextFloat(0f,3f), mathRandom.NextFloat(0f,2f));
                     hoverable.Offset =  new float3(mathRandom.NextFloat(0f,1f), mathRandom.NextFloat(0f,1f), mathRandom.NextFloat(0f,1f));

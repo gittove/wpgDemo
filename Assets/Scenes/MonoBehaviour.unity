@@ -576,6 +576,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SquigglyMovementSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 4890735311368418993, guid: 3825ed5cb69326e499bd6e4d044fe5aa, type: 3}
+      propertyPath: SpawnRange.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890735311368418993, guid: 3825ed5cb69326e499bd6e4d044fe5aa, type: 3}
+      propertyPath: SpawnRange.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4890735311368418993, guid: 3825ed5cb69326e499bd6e4d044fe5aa, type: 3}
+      propertyPath: SpawnRange.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8653023557234118756, guid: 3825ed5cb69326e499bd6e4d044fe5aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

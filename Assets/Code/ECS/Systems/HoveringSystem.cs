@@ -20,7 +20,6 @@ partial struct HoveringSystem : ISystem
         var hoverJob = new HoverJob() { Time = time };
 
         state.Dependency = hoverJob.ScheduleParallel(state.Dependency);
-        //ecb.Playback(state.EntityManager); 
     }
 
     [BurstCompile]

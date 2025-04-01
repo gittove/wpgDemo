@@ -1,8 +1,11 @@
+using Unity.Mathematics;
 using Unity.Entities;
 using UnityEngine;
 
 public class HoverableAuthoring : MonoBehaviour
 {
+    public float3 HoverRadius;
+
     [BakingVersion("tove", 1)]
     private class HoverableBaker : Baker<HoverableAuthoring>
     {
@@ -12,15 +15,9 @@ public class HoverableAuthoring : MonoBehaviour
 
             AddComponent(entity, new Hoverable()
             {
-                Radius = new Unity.Mathematics.float3(1f,1f,1f),
-                Rate = new Unity.Mathematics.float3(
-                    UnityEngine.Random.Range(0f, 5f),
-                    UnityEngine.Random.Range(0f, 3f),
-                    UnityEngine.Random.Range(0f, 2f)),
-                Offset = new Unity.Mathematics.float3(
-                    UnityEngine.Random.Range(0f, 1f),
-                    UnityEngine.Random.Range(0f, 1f),
-                    UnityEngine.Random.Range(0f, 1f)),
+                Radius = authoring.HoverRadius,
+                Rate = 0f,
+                Offset = 0f,
             });
         }
     }

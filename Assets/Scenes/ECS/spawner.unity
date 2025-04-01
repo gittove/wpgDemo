@@ -128,11 +128,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2770316663862315696, guid: 3fe083f3498dad24d8bd712d2a648d8c, type: 3}
       propertyPath: SpawnRange.x
-      value: 500
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 2770316663862315696, guid: 3fe083f3498dad24d8bd712d2a648d8c, type: 3}
       propertyPath: SpawnRange.y
-      value: 500
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 4995156391059393824, guid: 3fe083f3498dad24d8bd712d2a648d8c, type: 3}
       propertyPath: m_Name

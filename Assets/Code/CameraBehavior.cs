@@ -25,7 +25,7 @@ public class CameraBehavior : MonoBehaviour
         }
 
         var view = _spawner.SpawnRange;
-        float averageSize = math.max(view.x + padding, view.y + padding);
+        float averageSize = math.max(view.x * 0.5f + padding, view.y * 0.5f + padding);
         _targetZoomPosition = new Vector3(0f, 0f, -averageSize);
 
         _cameraTransform.localPosition = Vector3.Lerp(_cameraTransform.localPosition, _targetZoomPosition, 0.5f);
