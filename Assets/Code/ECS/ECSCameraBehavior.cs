@@ -19,14 +19,14 @@ public class ECSCameraBehavior : MonoBehaviour
     void Update()
     {
         var EntityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-        EntityQuery query = EntityManager.CreateEntityQuery(new ComponentType[] { typeof(SpawnerData) });
+        EntityQuery query = EntityManager.CreateEntityQuery(new ComponentType[] { typeof(SpawnerRange) });
 
-        if (!query.TryGetSingleton<SpawnerData>(out var spawner))
+        if (!query.TryGetSingleton<SpawnerRange>(out var spawnerRange))
         {
             return;
         }
 
-        var view = spawner.SpawnRange;
+        var view = spawnerRange.SpawnRange;
         float averageSize = math.max(view.x * 0.5f + padding, view.y * 0.5f + padding);
         _targetZoomPosition = new Vector3(0f, 0f, -averageSize);
 

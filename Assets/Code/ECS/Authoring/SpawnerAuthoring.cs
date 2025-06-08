@@ -12,10 +12,14 @@ public class SpawnerAuthoring : MonoBehaviour
         public override void Bake(SpawnerAuthoring authoring)
         {
             var entity = GetEntity(authoring, TransformUsageFlags.None);
-            AddComponent(entity, new SpawnerData 
+            AddComponent(entity, new SpawnerData
             {
-                SpawnRange = authoring.SpawnRange,
                 SpawnedCount = 0
+            });
+
+            AddComponent(entity, new SpawnerRange
+            {
+                SpawnRange = authoring.SpawnRange
             });
         }
     }
