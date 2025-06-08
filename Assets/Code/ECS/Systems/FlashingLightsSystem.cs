@@ -27,6 +27,7 @@ public partial class FlashingLightsSystem : SystemBase
         {
             float a = (float)math.sin(comp.Rate * time);
             light.intensity = comp.initialIntensity * math.abs(a); // = Color.Lerp(comp.ColorA, comp.ColorB, math.abs(a));
+            light.color = Color.Lerp(comp.ColorA, comp.ColorB, math.abs(a));
         }).WithoutBurst().Run();
     }
 
